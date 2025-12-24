@@ -1,39 +1,48 @@
-import { Link, useLocation } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Header = () => {
-  const location = useLocation();
-  
-  const isActive = (path: string) => location.pathname === path;
+  const { scrollY } = useScroll();
+  const headerOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  const headerBlur = useTransform(scrollY, [0, 100], [0, 10]);
   
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <motion.header 
+      className="fixed top-0 left-0 right-0 z-50 border-b border-border/0"
+      style={{ 
+        backgroundColor: `hsl(var(--background) / ${headerOpacity})`,
+        backdropFilter: `blur(${headerBlur}px)`,
+        borderColor: `hsl(var(--border) / ${headerOpacity})`
+      }}
+    >
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-serif text-xl font-semibold text-foreground hover:text-primary transition-colors">
+        <a href="#top" className="font-serif text-xl font-semibold text-foreground hover:text-primary transition-colors">
           Matthew Lin
-        </Link>
+        </a>
         
         <div className="flex items-center gap-8">
-          <Link 
-            to="/" 
-            className={`text-sm font-medium transition-colors ${isActive('/') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
+          <a 
+            href="#about" 
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Home
-          </Link>
-          <Link 
-            to="/portfolio" 
-            className={`text-sm font-medium transition-colors ${isActive('/portfolio') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
+            About
+          </a>
+          <a 
+            href="#experience" 
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Portfolio
-          </Link>
-          <Link 
-            to="/writing" 
-            className={`text-sm font-medium transition-colors ${isActive('/writing') ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
+            Experience
+          </a>
+          <a 
+            href="https://thoughts.matthew-lin.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Writing
-          </Link>
+            Thoughts ↗
+          </a>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 
