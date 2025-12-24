@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -7,12 +7,18 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center opacity-10"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background" />
       
       <div className="relative container mx-auto px-6 py-32 text-center">
+        {/* Profile Picture Circle */}
+        <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full border-4 border-primary/30 bg-card flex items-center justify-center overflow-hidden shadow-lg">
+          {/* Replace this with your image: <img src={profileImage} alt="Matthew Lin" className="w-full h-full object-cover" /> */}
+          <User className="w-16 h-16 md:w-20 md:h-20 text-muted-foreground" />
+        </div>
+        
         <span className="inline-block text-sm font-medium text-primary mb-4 tracking-wide uppercase">
           Designer & Developer
         </span>
