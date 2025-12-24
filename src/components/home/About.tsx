@@ -1,20 +1,69 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 const About = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+
   return (
-    <section className="py-24 bg-card">
+    <section 
+      ref={containerRef}
+      id="about" 
+      className="min-h-screen flex items-center py-32 relative"
+    >
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
-            About Me
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I'm a creative professional passionate about building meaningful digital products. 
-            With a background in design and development, I bring a unique perspective to every project.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            When I'm not working on projects, you'll find me writing about technology, design, 
-            and the creative process. I believe in sharing knowledge and learning in public.
-          </p>
-        </div>
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          style={{ y, opacity }}
+        >
+          <motion.span 
+            className="text-sm font-medium text-primary mb-4 tracking-wide uppercase block"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            About
+          </motion.span>
+          
+          <motion.h2 
+            className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-12 leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            I build products that matter.
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 text-lg text-muted-foreground leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              I'm a creative professional passionate about building meaningful digital products. 
+              With a background in design and development, I bring a unique perspective to every project.
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              When I'm not working on projects, you'll find me writing about technology, design, 
+              and the creative process on my <a href="https://thoughts.matthew-lin.com" className="text-primary hover:underline">thoughts blog</a>.
+            </motion.p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
