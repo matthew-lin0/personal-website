@@ -39,7 +39,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Designer & Developer
+          Researcher and Generalist.
         </motion.span>
         
         <motion.h1 
@@ -57,7 +57,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          Crafting thoughtful digital experiences at the intersection of design and technology.
+          Student. Researcher. Builder. Deep tech enthusiast.
         </motion.p>
 
         <motion.a
