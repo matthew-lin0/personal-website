@@ -39,7 +39,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            I build products that matter.
+            I love building projects and research.
           </motion.h2>
           
           <div className="grid md:grid-cols-2 gap-12 text-lg text-muted-foreground leading-relaxed">
@@ -49,8 +49,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              I'm a creative professional passionate about building meaningful digital products. 
-              With a background in design and development, I bring a unique perspective to every project.
+              Currently studying chemistry @ Yale University ('30). I love deep tech.
             </motion.p>
             
             <motion.p
@@ -59,8 +58,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              When I'm not working on projects, you'll find me writing about technology, design, 
-              and the creative process on my <a href="https://thoughts.matthew-lin.com" className="text-primary hover:underline">thoughts blog</a>.
+              When I'm not working on projects, you'll find me writing about almost anything on my <a href="https://thoughts.matthew-lin.com" className="text-primary hover:underline">thoughts blog</a> (currently under construction).
             </motion.p>
           </div>
         </motion.div>

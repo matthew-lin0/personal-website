@@ -1,43 +1,43 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, FlaskConical } from "lucide-react";
 
 interface TimelineItem {
   year: string;
   title: string;
   company: string;
   description: string;
-  type: "work" | "education";
+  type: "work" | "education" | "research";
 }
 
 const timelineData: TimelineItem[] = [
   {
-    year: "2024",
-    title: "Senior Product Designer",
-    company: "Tech Company",
-    description: "Leading design initiatives for enterprise products, focusing on user experience and design systems.",
-    type: "work"
-  },
-  {
-    year: "2022",
-    title: "Product Designer",
-    company: "Startup Inc",
-    description: "Designed and shipped consumer-facing mobile applications with millions of users.",
-    type: "work"
-  },
-  {
-    year: "2020",
-    title: "UX Designer",
-    company: "Agency Co",
-    description: "Collaborated with diverse clients across industries to deliver impactful design solutions.",
-    type: "work"
-  },
-  {
-    year: "2018",
-    title: "Bachelor's in Design",
-    company: "University",
-    description: "Studied interaction design, visual communication, and human-computer interaction.",
+    year: "2026-2030",
+    title: "Chemistry",
+    company: "Yale University",
+    description: "Studying chemistry",
     type: "education"
+  },
+  {
+    year: "2025/2024",
+    title: "Chemistry Research Intern",
+    company: "Zhong Research Group @ Yale",
+    description: "Using bayesian optimization to design conductive peo-based mixed graft block copolymers (2025). Discovery of Efficient Silica Scale Inhibitors by Utilizing Bottlebrush Polymers (2024).",
+    type: "research"
+  },
+  {
+    year: "2025",
+    title: "Research Intern",
+    company: "SSGCID @ Dartmouth",
+    description: "Collaborate with a team of high school researchers to submit manuscript on the structures of MIF proteins from malaria-causing parasites.",
+    type: "research"
+  },
+  {
+    year: "2024",
+    title: "Intern",
+    company: "Office of Assemblywoman Gina Sillitti",
+    description: "Resolved issues with constituents; learned legislative process; managed office database; phone banked and knocked on doors for re-election campaign.",
+    type: "work"
   }
 ];
 

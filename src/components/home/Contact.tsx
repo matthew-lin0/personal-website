@@ -21,7 +21,7 @@ const Contact = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground mb-12 max-w-xl mx-auto">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great.
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great. Down to discuss anything.
           </p>
 
           <motion.a
@@ -36,7 +36,7 @@ const Contact = () => {
 
           <div className="flex items-center justify-center gap-8 mt-16">
             <motion.a 
-              href="https://github.com" 
+              href="https://github.com/matthew-lin0" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -47,7 +47,7 @@ const Contact = () => {
               <Github className="w-6 h-6" />
             </motion.a>
             <motion.a 
-              href="https://linkedin.com" 
+              href="https://linkedin.com/in/matthew-lin0" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
