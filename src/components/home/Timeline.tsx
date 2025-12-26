@@ -105,8 +105,10 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
             <div className="flex items-center gap-2 mb-2">
               {item.type === "work" ? (
                 <Briefcase className="w-4 h-4 text-primary" />
-              ) : (
+              ) : item.type === "education" ? (
                 <GraduationCap className="w-4 h-4 text-primary" />
+              ) : (
+                <FlaskConical className="w-4 h-4 text-primary" />
               )}
               <span className="text-sm font-medium text-primary">{item.year}</span>
             </div>
